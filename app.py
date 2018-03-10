@@ -15,6 +15,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = settings.DB_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.TRACK_MODIFICATIONS
 app.secret_key = settings.SECRET_KEY
 
+stripe.api_key = settings.STRIPE_SECRET_KEY # Stripe's API key
+
 @app.route('/')
 def home_page():
     return "Home Page"
