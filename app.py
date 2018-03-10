@@ -67,20 +67,27 @@ def income_create():
         else:
             user = User.query.filter_by(id=csrf).first()
             amount = request.form["amount"]
-            password = request.form["password"]
-            confirm_password = request.form["confirm_password"]
-            address = request.form["address"]
-            if not email.index("@") > 0 and not email.index(".") > email.index("@"):
-                return redirect(url_for('.home_page'))
-            if not confirm_password == password:
-                return redirect(url_for('.home_page'))
-            u = User.query.filter_by(email=email).count()
-            if u == 0:
-                new_user = User(first_name, last_name, email, password)
-                db_session.add(new_user)
-                db_session.commit()
-                print('Created User', file=sys.stderr)
-                return redirect(url_for('.home_page'))
+            description = request.form["description"]
+            new_income_statement = Income(user_id, amount, description)
+            db_session.add(new_income_statement)
+            db_session.commit()
+            print('Created Income Statement', file=sys.stderr)
+            return redirect(url_for('.home_page'))
+
+@app.route('/expense/create', methods=["POST"]):
+def expense_create():
+    if request.method == "POST":
+        csrf = session.get('csrf', {})
+        if len(csrf) == 0:
+            return render_template("index.html")
+        else:
+            user = User.query.filter_by(id=csrf).first()
+            amount = request.form["amount"]
+            description = request.form["description"]
+            new_expense_statement = Expense(user_id, amount, description)
+            db_session.add(new_expense_statement)
+            db_session.commit()
+            print('Created expense Statement', file=sys.stderr)
             return redirect(url_for('.home_page'))
 
 @app.route('/login', methods=["POST"])
