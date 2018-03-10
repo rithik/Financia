@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from coderthemes.com/minton/dark_light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 22:33:29 GMT -->
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,7 +9,7 @@
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>GIFFIK - Responsive Admin Dashboard Template</title>
 
         <link href="../static/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../static/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
@@ -36,7 +35,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>Minton</span></a>
+                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>GIFFIK</span></a>
                     </div>
                 </div>
 
@@ -44,66 +43,27 @@
                 <nav class="navbar-custom">
 
                     <ul class="list-inline float-right mb-0">
-
                         <li class="list-inline-item notification-list hide-phone">
                             <a class="nav-link waves-light waves-effect" href="#" id="btn-fullscreen">
                                 <i class="mdi mdi-crop-free noti-icon"></i>
                             </a>
                         </li>
-
-                        <li class="list-inline-item notification-list">
-                            <a class="nav-link right-bar-toggle waves-light waves-effect" href="#">
-                                <i class="mdi mdi-dots-horizontal noti-icon"></i>
-                            </a>
+                        
+                        <li class="list-inline-item notification-list hide-phone nav-link waves-light waves-effect btn-secondary btn-rounded">
+                                <h2>+</h2>
                         </li>
 
-                        <li class="list-inline-item dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="false" aria-expanded="false">
-                                <i class="mdi mdi-bell noti-icon"></i>
-                                <span class="badge badge-pink noti-icon-badge">4</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg" aria-labelledby="Preview">
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="font-16"><span class="badge badge-danger float-right">5</span>Notification</h5>
-                                </div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-success"><i class="mdi mdi-comment-account"></i></div>
-                                    <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info"><i class="mdi mdi-account"></i></div>
-                                    <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-danger"><i class="mdi mdi-airplane"></i></div>
-                                    <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
-                                </a>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
+                        
 
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                <img src="assets/images/users/generic_user.png" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                                    <h5 class="text-overflow"><small>Welcome @USER!</small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -127,6 +87,8 @@
                                 </a>
 
                             </div>
+                            
+                            
                         </li>
 
                     </ul>
@@ -144,6 +106,8 @@
                             </form>
                         </li>
                     </ul>
+                    
+                    
 
                 </nav>
 
@@ -352,9 +316,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Welcome !</h4>
+                                    <h4 class="page-title">Welcome  @USER!</h4>
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item"><a href="#">Minton</a></li>
+                                        <li class="breadcrumb-item"><a href="#">GIFFIK</a></li>
                                         <li class="breadcrumb-item active">Dashboard</li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -483,88 +447,6 @@
 
 
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card-box">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="row">
-                                                <div class="col-6 text-center">
-                                                    <canvas id="partly-cloudy-day" width="100" height="100"></canvas>
-                                                </div>
-                                                <div class="col-6">
-                                                    <h2 class="m-t-0 text-muted"><b>32°</b></h2>
-                                                    <p class="text-muted">Partly cloudy</p>
-                                                    <p class="text-muted mb-0">15km/h - 37%</p>
-                                                </div>
-                                            </div><!-- End row -->
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="row">
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">SAT</h4>
-                                                    <canvas id="cloudy" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">30<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">SUN</h4>
-                                                    <canvas id="wind" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">28<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">MON</h4>
-                                                    <canvas id="clear-day" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">33<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                            </div><!-- end row -->
-                                        </div>
-                                    </div><!-- end row -->
-                                </div>
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-6">
-                                <div class="card-box">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <div class="">
-                                                <div class="row">
-                                                    <div class="col-6 text-center">
-                                                        <canvas id="snow" width="100" height="100"></canvas>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h2 class="m-t-0 text-muted"><b> 23°</b></h2>
-                                                        <p class="text-muted">Partly cloudy</p>
-                                                        <p class="text-muted mb-0">15km/h - 37%</p>
-                                                    </div>
-                                                </div><!-- end row -->
-                                            </div><!-- weather-widget -->
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <div class="row">
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">SAT</h4>
-                                                    <canvas id="sleet" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">30<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">SUN</h4>
-                                                    <canvas id="fog" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">28<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                                <div class="col-4 text-center">
-                                                    <h4 class="text-muted m-t-0">MON</h4>
-                                                    <canvas id="partly-cloudy-night" width="35" height="35"></canvas>
-                                                    <h4 class="text-muted">33<i class="wi wi-degrees"></i></h4>
-                                                </div>
-                                            </div><!-- End row -->
-                                        </div> <!-- col-->
-                                    </div><!-- End row -->
-                                </div>
-                            </div> <!-- end col -->
-                        </div>
-                        <!--end row/ WEATHER -->
-
-
-                        <div class="row">
                             <div class="col-lg-8">
                                 <div class="card-box">
                                     <h4 class="header-title m-t-0">Latest Projects</h4>
@@ -587,7 +469,7 @@
                                             <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Minton Admin v1</td>
+                                                <td> Admin v1</td>
                                                 <td>01/01/2017</td>
                                                 <td>26/04/2017</td>
                                                 <td><span class="badge badge-info">Released</span></td>
@@ -595,15 +477,15 @@
                                             </tr>
                                             <tr>
                                                 <td>2</td>
-                                                <td>Minton Frontend v1</td>
+                                                <td> Frontend v1</td>
                                                 <td>01/01/2017</td>
                                                 <td>26/04/2017</td>
                                                 <td><span class="badge badge-success">Released</span></td>
-                                                <td>Minton admin</td>
+                                                <td> admin</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
-                                                <td>Minton Admin v1.1</td>
+                                                <td> Admin v1.1</td>
                                                 <td>01/05/2017</td>
                                                 <td>10/05/2017</td>
                                                 <td><span class="badge badge-pink">Pending</span></td>
@@ -611,16 +493,16 @@
                                             </tr>
                                             <tr>
                                                 <td>4</td>
-                                                <td>Minton Frontend v1.1</td>
+                                                <td> Frontend v1.1</td>
                                                 <td>01/01/2017</td>
                                                 <td>31/05/2017</td>
                                                 <td><span class="badge badge-purple">Work in Progress</span>
                                                 </td>
-                                                <td>Minton admin</td>
+                                                <td> admin</td>
                                             </tr>
                                             <tr>
                                                 <td>5</td>
-                                                <td>Minton Admin v1.3</td>
+                                                <td> Admin v1.3</td>
                                                 <td>01/01/2017</td>
                                                 <td>31/05/2017</td>
                                                 <td><span class="badge badge-warning">Coming soon</span></td>
@@ -634,42 +516,6 @@
                             </div>
                             <!-- end col -8 -->
 
-                            <div class="col-lg-4">
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="assets/images/users/avatar-1.jpg" class="img-responsive rounded-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h5 class="mt-0 m-b-5 font-16">Chadengle</h5>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                            <small class="text-warning"><b>Admin</b></small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="assets/images/users/avatar-2.jpg" class="img-responsive rounded-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h5 class="mt-0 m-b-5 font-16">Tomaslau</h5>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                            <small class="text-success"><b>User</b></small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-box widget-user">
-                                    <div>
-                                        <img src="assets/images/users/avatar-7.jpg" class="img-responsive rounded-circle" alt="user">
-                                        <div class="wid-u-info">
-                                            <h5 class="mt-0 m-b-5 font-16">Ok</h5>
-                                            <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                            <small class="text-pink"><b>Admin</b></small>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
                         </div>
                         <!-- end row -->
 
@@ -680,7 +526,7 @@
                 <!-- end content -->
 
                 <footer class="footer">
-                    2016 - 2018 © Minton <span class="hide-phone">- Coderthemes.com</span>
+                    2016 - 2018 ©  <span class="hide-phone">- Coderthemes.com</span>
                 </footer>
 
             </div>
@@ -878,5 +724,4 @@
 
     </body>
 
-<!-- Mirrored from coderthemes.com/minton/dark_light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 22:34:01 GMT -->
 </html>
