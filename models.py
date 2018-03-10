@@ -111,7 +111,7 @@ class StockPurchase(Base):
 
     def __repr__(self):
         return '<user_id {} expense {}>'.format(self.user_id, amount)
-#user, amount, merchant, stripe_charge_id, stripe_payout_id
+
 class CustomerPurchase(Base):
     __tablename__ = 'customerpurchase'
 
