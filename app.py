@@ -141,6 +141,30 @@ def income_create():
         session.pop('csrf', None)
         return render_template("index.html")
 
+@app.route('/alexa/income/<amount>', methods=["GET"])
+def income_create_alexa(amount):
+    user = User.query.filter_by(id=1).first()
+    amount = float(amount)
+    description = "Income"
+    print(user, file=sys.stderr)
+    new_income_statement = Income(str(1), amount, description)
+    db_session.add(new_income_statement)
+    db_session.commit()
+    print('Created Income Statement', file=sys.stderr)
+    return '{"success": "200"}'
+
+@app.route('/alexa/expense/<amount>/<category>', methods=["GET"])
+def expense_create_alexa(amount, category):
+    user = User.query.filter_by(id=1).first()
+    amount = float(amount)
+    description = category # MAKE SURE THAT THIS IS CAPITAL
+    print(user, file=sys.stderr)
+    new_income_statement = Expense(str(1), amount, description)
+    db_session.add(new_income_statement)
+    db_session.commit()
+    print('Created Expense Statement', file=sys.stderr)
+    return '{"success": "200"}'
+
 @app.route('/add/expense', methods=["POST"])
 def expense_create():
     try:
