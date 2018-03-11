@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
 <!-- Mirrored from coderthemes.com/minton/dark_light/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 22:37:58 GMT -->
 <head>
         <meta charset="utf-8">
@@ -10,15 +10,15 @@
 
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>Financia</title>
 
-        <link href="../plugins/switchery/switchery.min.css" rel="stylesheet" />
+        <link href="../static/switchery/switchery.min.css" rel="stylesheet" />
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../static/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="../static/assets/css/style.css" rel="stylesheet" type="text/css">
 
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="../static/js/modernizr.min.js"></script>
 
     </head>
     <body>
@@ -26,10 +26,10 @@
         <div class="wrapper-page">
 
             <div class="text-center">
-                <a href="index.html" class="logo-lg"><i class="mdi mdi-radar"></i> <span>Minton</span> </a>
+                <a href="index.html" class="logo-lg"><i class="mdi mdi-radar"></i> <span>Financia</span> </a>
             </div>
 
-            <form class="form-horizontal m-t-20" action="http://coderthemes.com/minton/dark_light/index.html">
+            <form class="form-horizontal m-t-20" action="/login/post" method="POST">
 
                 <div class="form-group row">
                     <div class="col-12">
@@ -37,7 +37,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="mdi mdi-account"></i></span>
                             </div>
-                            <input class="form-control" type="text" required="" placeholder="Username">
+                            <input class="form-control" type="email" name="email" required="" placeholder="Email Address">
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="mdi mdi-key"></i></span>
                             </div>
-                            <input class="form-control" type="password" required="" placeholder="Password">
+                            <input class="form-control" type="password" required="" name="password" placeholder="Password">
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             password?</a>
                     </div>
                     <div class="col-sm-5 text-right">
-                        <a href="pages-register.html" class="text-muted">Create an account</a>
+                        <a href="/register" class="text-muted">Create an account</a>
                     </div>
                 </div>
             </form>
@@ -90,23 +90,23 @@
         </script>
 
         <!-- Plugins  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
-        <script src="../plugins/switchery/switchery.min.js"></script>
+        <script src="../static/assets/js/jquery.min.js"></script>
+        <script src="../static/assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="../static/assets/js/bootstrap.min.js"></script>
+        <script src="../static/assets/js/detect.js"></script>
+        <script src="../static/assets/js/fastclick.js"></script>
+        <script src="../static/assets/js/jquery.slimscroll.js"></script>
+        <script src="../static/assets/js/jquery.blockUI.js"></script>
+        <script src="../static/assets/js/waves.js"></script>
+        <script src="../static/assets/js/wow.min.js"></script>
+        <script src="../static/assets/js/jquery.nicescroll.js"></script>
+        <script src="../static/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../static/switchery/switchery.min.js"></script>
 
         <!-- Custom main Js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
-	
+        <script src="../static/assets/js/jquery.core.js"></script>
+        <script src="../static/assets/js/jquery.app.js"></script>
+
 	</body>
 
 <!-- Mirrored from coderthemes.com/minton/dark_light/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 22:37:58 GMT -->
