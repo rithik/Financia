@@ -29,7 +29,7 @@
                 <a href="index.html" class="logo-lg"><i class="mdi mdi-radar"></i> <span>Financia</span> </a>
             </div>
 
-            <form class="form-horizontal m-t-20" action="/register/create" method="POST">
+            <form class="form-horizontal m-t-20" {% if not merchant %} action="/register/create" {% else  %} action="/merchant/register/create" {% endif %} method="POST">
 
                 <div class="form-group row">
                     <div class="col-12">

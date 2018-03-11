@@ -26,7 +26,7 @@ class Expense(Base):
         self.time = datetime.datetime.now()
 
     def __repr__(self):
-        return '<user_id {} expense {}>'.format(self.user_id, amount)
+        return '<user_id {} expense {}>'.format(self.user_id, self.amount)
 
 class Income(Base):
     __tablename__ = 'incomes'
@@ -43,7 +43,7 @@ class Income(Base):
         self.time = datetime.datetime.now()
 
     def __repr__(self):
-        return '<user_id {} income {}>'.format(self.user_id, amount)
+        return '<user_id {} income {}>'.format(self.user_id, self.amount)
 
 class User(Base):
     __tablename__ = 'users'
@@ -110,7 +110,7 @@ class StockPurchase(Base):
         self.time = datetime.datetime.now()
 
     def __repr__(self):
-        return '<user_id {} expense {}>'.format(self.user_id, amount)
+        return '<user_id {} expense {}>'.format(self.user_id, self.amount)
 
 class CustomerPurchase(Base):
     __tablename__ = 'customerpurchase'

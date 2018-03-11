@@ -7,82 +7,94 @@
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../static/assets/images/favicon.ico">
 
-        <title>GIFFIK - Responsive Admin Dashboard Template</title>
+        <title>Financia</title>
 
         <link href="../static/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../static/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
         <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../static/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="../static/assets/css/style.css" rel="stylesheet" type="text/css">
 
-        <script src="assets/js/modernizr.min.js"></script>
+        <script src="../static/assets/js/modernizr.min.js"></script>
 
 
     </head>
 
 
     <body class="fixed-left">
-        
+
         <div id="addIncome" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title text-success">Add Income</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="field-1" class="control-label">How much did you earn?</label>
-                                                                <input type="text" class="form-control" id="field-1" placeholder="$0.00">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-info waves-effect waves-light">Save changes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- /.modal -->
-                                    
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/income" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-success">Add Income</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">How much did you earn?</label>
+                                        <input type="text" class="form-control" name="amount" id="field-1" placeholder="$0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+
         <div id="addExpense" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title text-danger">Add Expense</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="field-1" class="control-label">How much did you spend?</label>
-                                                                <input type="text" class="form-control" id="field-1" placeholder="$0.00">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="field-2" class="control-label">Category</label>
-                                                                <input type="text" class="form-control" id="field-2" placeholder="Entertainment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                            
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-info waves-effect waves-light">Save changes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- /.modal -->
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/expense" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-danger">Add Expense</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">How much did you spend?</label>
+                                        <input type="text" class="form-control" id="field-1" name="amount" placeholder="$0.00">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-2" class="control-label">Category</label>
+                                        <select class="form-control" id="category" name="category">
+                                            <option>Food</option>
+                                            <option>Clothes</option>
+                                            <option>Groceries</option>
+                                            <option>Entertainment</option>
+                                            <option>Transportation</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
 
         <!-- Begin page -->
         <div id="wrapper">
@@ -93,7 +105,7 @@
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>GIFFIK</span></a>
+                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>Financia</span></a>
                     </div>
                 </div>
 
@@ -106,25 +118,25 @@
                                 <i class="mdi mdi-crop-free noti-icon"></i>
                             </a>
                         </li>
-                        
+
                         <button class="list-inline-item hide-phone waves-light waves-effect btn-success btn-rounded" data-toggle="modal" data-target="#addIncome">
                                 Income
                         </button>
-                        
+
                         <button class="list-inline-item hide-phone waves-light waves-effect btn-danger btn-rounded" data-toggle="modal" data-target="#addExpense">
                                 Expense
                         </button>
-                        
+
 
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/users/generic_user.png" alt="user" class="rounded-circle">
+                                <img src="../static/assets/images/users/generic_user.png" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Welcome @USER!</small> </h5>
+                                    <h5 class="text-overflow"><small>Welcome {{ user_name }}!</small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -148,8 +160,8 @@
                                 </a>
 
                             </div>
-                            
-                            
+
+
                         </li>
 
                     </ul>
@@ -161,8 +173,8 @@
                             </button>
                         </li>
                     </ul>
-                    
-                    
+
+
 
                 </nav>
 
@@ -371,9 +383,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Welcome  @USER!</h4>
+                                    <h4 class="page-title">Welcome {{user_name}}!</h4>
                                     <ol class="breadcrumb float-right">
-                                        <li class="breadcrumb-item"><a href="#">GIFFIK</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Financia</a></li>
                                         <li class="breadcrumb-item active">Dashboard</li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -581,7 +593,7 @@
                 <!-- end content -->
 
                 <footer class="footer">
-                    2016 - 2018 ©  <span class="hide-phone">- Coderthemes.com</span>
+                    2018 ©  <span class="hide-phone">- Financia</span>
                 </footer>
 
             </div>
@@ -720,12 +732,12 @@
         <script src="../static/assets/js/bootstrap.min.js"></script>
         <script src="../static/assets/js/detect.js"></script>
         <script src="../static/assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../static/assets/js/jquery.slimscroll.js"></script>
+        <script src="../static/assets/js/jquery.blockUI.js"></script>
+        <script src="../static/assets/js/waves.js"></script>
+        <script src="../static/assets/js/wow.min.js"></script>
+        <script src="../static/assets/js/jquery.nicescroll.js"></script>
+        <script src="../static/assets/js/jquery.scrollTo.min.js"></script>
         <script src="../static/switchery/switchery.min.js"></script>
 
         <!-- Counter Up  -->
@@ -740,11 +752,11 @@
         <script src="../static/skyicons/skycons.min.js" type="text/javascript"></script>
 
         <!-- Page js  -->
-        <script src="assets/pages/jquery.dashboard.js"></script>
+        <script src="../static/assets/pages/jquery.dashboard.js"></script>
 
         <!-- Custom main Js -->
-        <script src="assets/js/jquery.core.js"></script>
-        <script src="assets/js/jquery.app.js"></script>
+        <script src="../static/assets/js/jquery.core.js"></script>
+        <script src="../static/assets/js/jquery.app.js"></script>
 
 
         <script type="text/javascript">
