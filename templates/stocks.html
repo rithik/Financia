@@ -22,6 +22,61 @@
 
 
     <body class="fixed-left">
+    <div id="BuyStock1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/expense" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-success">BuyStock</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label id="para" for="field-1" class="control-label">How much do you want to invest in NVIDIA?</label>
+                                        <input type="text" class="form-control" name="amount" id="field-1" placeholder="$0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+        <div id="BuyStock2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/expense" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-success">BuyStock</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label id="para" for="field-1" class="control-label">How much do you want to invest in APPLE?</label>
+                                        <input type="text" class="form-control" name="amount" id="field-1" placeholder="$0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+
 
         <div id="addCreditCard" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
             <div class="modal-dialog">
@@ -169,21 +224,7 @@
                                     <h5 class="text-overflow"><small>Welcome {{ user_name }}!</small> </h5>
                                 </div>
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account"></i> <span>Profile</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-settings"></i> <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
-                                </a>
-
+                    
                                 <!-- item-->
                                 <a href="/signout" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout"></i> <span>Logout</span>
@@ -239,21 +280,77 @@
                                     <div class="member-card">
 
                                         <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
+                                            <h4 class="m-b-5 mt-2">NVIDIA</h4>
+                                            <p class="text-muted">NVDA</p>
                                         </div>
                                         <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                            <img src="image/stockimg/nv.png" class="rounded-circle img-thumbnail" alt="profile-image">
                                         </div>
 
                                         <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">245.29</span></p>
 
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">95.49 - 251.97</span></p>
 
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">2.3</span></p>
 
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">Medium</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light" data-toggle="modal" value="hi" data-target="#BuyStock1" id = "1" data-id="FullStockName">Buy Now
+                                        </button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">APPLE</h4>
+                                            <p class="text-muted">AAPL</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="image/stockimg/apple.jpeg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">197.98</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">138.62 - 180.62</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">2.1</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">Low</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light" data-toggle="modal" value="hi" data-target="#BuyStock2" id = "1" data-id="FullStockName">Buy Now
+                                        </button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">ATT</h4>
+                                            <p class="text-muted">T</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="image/stockimg/att.png" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">37.05</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">32.55 - 42.70</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">2.5</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">Low</span></p>
                                         </div>
                                         <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
                                     </div>
@@ -266,21 +363,21 @@
                                     <div class="member-card">
 
                                         <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
+                                            <h4 class="m-b-5 mt-2">GOPRO</h4>
+                                            <p class="text-muted">GPRO</p>
                                         </div>
                                         <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                            <img src="image/stockimg/gopro.png" class="rounded-circle img-thumbnail" alt="profile-image">
                                         </div>
 
                                         <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">5.51</span></p>
 
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">5.04 - 11.89</span></p>
 
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">3.7</span></p>
 
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">High</span></p>
                                         </div>
                                         <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
                                     </div>
@@ -293,21 +390,21 @@
                                     <div class="member-card">
 
                                         <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
+                                            <h4 class="m-b-5 mt-2">FITBIT</h4>
+                                            <p class="text-muted">FIT</p>
                                         </div>
                                         <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                            <img src="image/stockimg/fitbit.png" class="rounded-circle img-thumbnail" alt="profile-image">
                                         </div>
 
                                         <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">5.19</span></p>
 
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">4.67 - 7.32</span></p>
 
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">3.0</span></p>
 
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">High</span></p>
                                         </div>
                                         <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
                                     </div>
@@ -320,75 +417,21 @@
                                     <div class="member-card">
 
                                         <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
+                                            <h4 class="m-b-5 mt-2">Ford</h4>
+                                            <p class="text-muted">F</p>
                                         </div>
                                         <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                            <img src="image/stockimg/ford.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
                                         </div>
 
                                         <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">10.73</span></p>
 
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">10.14 - 13.48</span></p>
 
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">3.0</span></p>
 
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
-                                    </div>
-
-                                </div> <!-- end card-box -->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4 col-md-6">
-                                <div class="text-center card-box">
-                                    <div class="member-card">
-
-                                        <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
-                                        </div>
-                                        <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
-                                        </div>
-
-                                        <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
-
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
-
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
-
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
-                                        </div>
-                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
-                                    </div>
-
-                                </div> <!-- end card-box -->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4 col-md-6">
-                                <div class="text-center card-box">
-                                    <div class="member-card">
-
-                                        <div class="">
-                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
-                                            <p class="text-muted">@Ticker</p>
-                                        </div>
-                                        <div class="thumb-lg member-thumb m-b-10 center-page">
-                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
-                                        </div>
-
-                                        <div class="text-left m-t-40">
-                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
-
-                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
-
-                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
-
-                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">Medium</span></p>
                                         </div>
                                         <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
                                     </div>
@@ -433,11 +476,13 @@
         <script src="assets/js/wow.min.js"></script>
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
-        <script src="../plugins/switchery/switchery.min.js"></script>
+        <script src="../static/switchery/switchery.min.js"></script>
 
         <!-- Custom main Js -->
         <script src="assets/js/jquery.core.js"></script>
         <script src="assets/js/jquery.app.js"></script>
+        <script type="text/javascript">
+        </script>
 
     </body>
 
