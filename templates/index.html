@@ -41,9 +41,7 @@
                                                                 <input type="text" class="form-control" id="field-1" placeholder="$0.00">
                                                             </div>
                                                         </div>
-                                                        
                                                     </div>
-                                                    
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
@@ -64,33 +62,19 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="field-1" class="control-label">Name</label>
-                                                                <input type="text" class="form-control" id="field-1" placeholder="John">
+                                                                <label for="field-1" class="control-label">How much did you spend?</label>
+                                                                <input type="text" class="form-control" id="field-1" placeholder="$0.00">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="field-2" class="control-label">Surname</label>
-                                                                <input type="text" class="form-control" id="field-2" placeholder="Doe">
+                                                                <label for="field-2" class="control-label">Category</label>
+                                                                <input type="text" class="form-control" id="field-2" placeholder="Entertainment">
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="field-3" class="control-label">Address</label>
-                                                                <input type="text" class="form-control" id="field-3" placeholder="Address">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                            <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group no-margin">
-                                                                <label for="field-7" class="control-label">Personal Info</label>
-                                                                <textarea class="form-control" id="field-7" placeholder="Write something about yourself"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
+                                                            
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
@@ -771,24 +755,6 @@
                 });
                 $('.circliful-chart').circliful();
             });
-
-            // BEGIN SVG WEATHER ICON
-            if (typeof Skycons !== 'undefined'){
-                var icons = new Skycons(
-                        {"color": "#3bafda"},
-                        {"resizeClear": true}
-                        ),
-                        list  = [
-                            "clear-day", "clear-night", "partly-cloudy-day",
-                            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-                            "fog"
-                        ],
-                        i;
-
-                for(i = list.length; i--; )
-                    icons.set(list[i], list[i]);
-                icons.play();
-            };
 
         </script>
 
