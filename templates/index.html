@@ -130,37 +130,37 @@
             <div class="topbar">
 
                 <!-- LOGO -->
-                <div class="topbar-left">
+                <div class="topbar-left hide-phone">
                     <div class="text-center">
-                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>Financia</span></a>
+                        <a href="/" class="logo"><i class="mdi mdi-radar"></i> <span>Financia</span></a>
                     </div>
                 </div>
 
                 <!-- Button mobile view to collapse sidebar menu -->
                 <nav class="navbar-custom">
 
-                    <ul class="list-inline float-right mb-0">
-                        <li class="list-inline-item notification-list hide-phone">
+                    <ul class="list-inline float-right mb-0" style="margin-left: -75px;margin-right:-15px">
+                        <!-- <li class="list-inline-item notification-list ">
                             <a class="nav-link waves-light waves-effect" href="#" id="btn-fullscreen">
                                 <i class="mdi mdi-crop-free noti-icon"></i>
                             </a>
-                        </li>
+                        </li> -->
 
-                        <a href="/cc/{{ user_id }}" class="list-inline-item hide-phone waves-light waves-effect btn-primary btn-rounded">
+                        <a href="/cc/{{ user_id }}" class="list-inline-item waves-light hide-phone waves-effect btn-primary btn-rounded">
                                 Pay
                         </a>
 
-                        <button class="list-inline-item hide-phone waves-light waves-effect btn-success btn-rounded" data-toggle="modal" data-target="#addIncome">
+                        <button class="list-inline-item waves-light waves-effect btn-success btn-rounded" data-toggle="modal" data-target="#addIncome">
                                 Income
                         </button>
 
-                        <button class="list-inline-item hide-phone waves-light waves-effect btn-danger btn-rounded" data-toggle="modal" data-target="#addExpense">
+                        <button class="list-inline-item waves-light waves-effect btn-danger btn-rounded" data-toggle="modal" data-target="#addExpense">
                                 Expense
                         </button>
 
-                        <button class="list-inline-item hide-phone waves-light waves-effect btn-pink btn-rounded" href="/stocks">
+                        <a class="list-inline-item waves-light waves-effect btn-warning btn-rounded" href="/stocks">
                                 Stocks
-                        </button>
+                        </a>
 
 
                         <li class="list-inline-item dropdown notification-list">
@@ -282,7 +282,7 @@
                                                 <h4 class="m-b-0">Clothes</h4>
                                             </li>
                                             <li>
-                                                <h5 class="m-t-20" style="color:#fcadff">Black</h5>
+                                                <h5 class="m-t-20" style="color:#fcadff">Pink</h5>
                                                 <h4 class="m-b-0">Groceries</h4>
                                             </li>
                                             <li>
@@ -446,7 +446,7 @@
             incomes.forEach(function(x) {
                 totalincomes+=parseInt(x.amount);
             });
-            document.getElementById("totalincome").innerHTML = totalincomes;
+            document.getElementById("totalincome").innerHTML = totalincomes.toFixed(2);
 
             var food = 0;
             var clothes = 0;
@@ -476,7 +476,7 @@
               }
             });
             var totalcosts = food+clothes+transportation+groceries+entertainment+other;
-            document.getElementById("totalexpense").innerHTML = totalcosts;
+            document.getElementById("totalexpense").innerHTML = totalcosts.toFixed(2);
             var budgetdata = [totalcosts, totalincomes-totalcosts];
             var expenseData = [food,clothes,groceries,transportation,entertainment,other];
             DrawPie(expenseData, budgetdata);

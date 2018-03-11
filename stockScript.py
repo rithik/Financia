@@ -1,4 +1,4 @@
- import requests
+import requests
 import sys
 import time
 
@@ -36,15 +36,14 @@ def volatility():
         medRisk.append((TICKER, fin[middle+3:]))
     if changePerc < .35:
         highRisk.append((TICKER, fin[middle+3:]))
-        
+
 def getPrice():
     url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "/analysts?p=" + TICKER_SYMBOL
     r = requests.get(url).text
     r = requests.get(url).text
     x = r.find("regularMarketPrice")
-
     return x
-      
+
 def getRecommendationMean():
     url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "/analysts?p=" + TICKER_SYMBOL
     r = requests.get(url).text
@@ -76,8 +75,7 @@ for i in sdict:
     num = foo(10)
     recc = num[0]
     current = num[1]
-    reccomdation.append((i[0],num,recc));
+    reccomdation.append((i[0],num,recc)#sice = sorted(reccomdation, key=lambda tup: tup[1])
+reccomdation.sort(key=lambda x: x[1])
+print(reccomdation)
 
-sice = sorted(reccomdation, key=lambda tup: tup[1])
-
-print (sice)

@@ -92,7 +92,7 @@ def home_page():
             return render_template("landing.html")
         uid = csrf[csrf.index(":")+2:len(csrf)-1]
         print(uid, file=sys.stderr)
-        
+
         exc_info = sys.exc_info()
         user = User.query.filter_by(id=uid).first()
         print(user, file=sys.stderr)
@@ -245,6 +245,21 @@ def merchant_credit_card(uid):
     merchant = Merchant.query.filter_by(id=int(uid)).first()
     return render_template("pages-cc-merchant.html")
 
+@app.route('/stocks', methods=["GET"])
+def stocks():
+    try:
+        csrf = session.get('csrf', {})
+        uid = csrf[csrf.index(":")+2:len(csrf)-1]
+        print(uid, file=sys.stderr)
+        if len(csrf) == 0:
+            return render_template("index.html")
+        else:
+            user = User.query.filter_by(id=uid).first()
+            return render_template("stocks.html", user_id=user.id, user_name=user.name)
+    except:
+        print("ERROR OCCURED", file=sys.stderr)
+        return redirect("/")
+
 @socketio.on('connect-to-merchant')
 def connect_to_merchant(json):
     print(json, file=sys.stderr)
@@ -259,8 +274,11 @@ def allow_connect_to_merchant(json):
 
 @socketio.on('pay')
 def allow_connect_to_merchant(json):
+    user = User.query.filter_by(id=int(json["user"])).first()
+    new_income_statement = Expense(str(user.id), json["amount"], "Other")
+    db_session.add(new_income_statement)
+    db_session.commit()
     socketio.emit('transaction-complete', json)
-
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
