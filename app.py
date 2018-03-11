@@ -10,6 +10,7 @@ from werkzeug.utils import secure_filename
 import stripe
 import traceback
 from flask_socketio import SocketIO, emit
+import eventlet
 
 app = Flask(__name__)
 
@@ -76,7 +77,12 @@ def merchant_login_post():
             return redirect(url_for('.home_page'))
         session['merchant_csrf'] = json.dumps({"user":user.id})
         print(session['merchant_csrf'], file=sys.stderr)
-        return redirect(url_for('.home_page'))
+        return redirect("/merchant/cc/" + str(user.id))
+
+@app.route('/signout')
+def signout():
+    session.pop('csrf', None)
+    return redirect("/")
 
 @app.route('/')
 def home_page():
@@ -85,7 +91,7 @@ def home_page():
         uid = csrf[csrf.index(":")+2:len(csrf)-1]
         print(uid, file=sys.stderr)
         if len(csrf) == 0:
-            return render_template("index.html")
+            return render_template("landing.html")
         else:
             exc_info = sys.exc_info()
             user = User.query.filter_by(id=uid).first()
@@ -94,12 +100,12 @@ def home_page():
             print(income_statements, file=sys.stderr)
             expense_statements = Expense.query.filter_by(user_id=user.id).all()
             print(expense_statements, file=sys.stderr)
-            return render_template("index.html", user_name=user.name,
+            return render_template("index.html", user_id=user.id, user_name=user.name,
                                     income=income_statements, expense=expense_statements)
     except:
         print("ERROR OCCURED", file=sys.stderr)
         session.pop('csrf', None)
-        return render_template("index.html")
+        return render_template("landing.html")
 
 @app.route('/add/income', methods=["POST"])
 def income_create():
@@ -183,6 +189,14 @@ def login():
 def merchant_login():
     return render_template("pages-login.html", merchant=True)
 
+@app.route('/user/setCreditCard/<customer>/<uid>', methods=["GET"])
+def add_stripe_customer(customer, uid):
+    user = User.query.filter_by(id=uid).first()
+    user.stripe_customer_id = customer
+    db_session.add(user)
+    db_session.commit()
+    return redirect("/")
+
 @app.route('/cc/<uid>', methods=["GET", "POST"])
 def credit_card(uid):
     user = User.query.filter_by(id=int(uid)).first()
@@ -194,17 +208,21 @@ def merchant_credit_card(uid):
     return render_template("pages-cc-merchant.html")
 
 @socketio.on('connect-to-merchant')
-def connect_to_merchant(user_id, merchant_id):
-    print("HERE", file=sys.stderr)
-    namespace = "/merchant/cc/" + merchant_id
-    user = User.query.filter_by(id=int(user_id)).first()
-    socketio.emit('connect-to-user', user, namespace=namespace)
+def connect_to_merchant(json):
+    print(json, file=sys.stderr)
+    namespace = "/merchant/cc/" + json["merchant"]
+    user = User.query.filter_by(id=int(json["user"])).first()
+    json["name"] = user.name
+    socketio.emit('connect-to-user', json)
 
-@socketio.on('allow-connect-merchant')
-def allow_connect_to_merchant(user_id, merchant_id, amount):
-    namespace = "/cc/" + merchant_id
-    merchant = Merchant.query.filter_by(id=int(merchant_id)).first()
-    socketio.emit('allow-connect-merchant', merchant, amount, namespace=namespace)
+@socketio.on('start-transaction')
+def allow_connect_to_merchant(json):
+    socketio.emit('start-transaction', json)
+
+@socketio.on('pay')
+def allow_connect_to_merchant(json):
+    socketio.emit('transaction-complete', json)
+
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)

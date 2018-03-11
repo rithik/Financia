@@ -87,6 +87,23 @@
                     </button>
                 </div>
             </div>
+            <div class="form-group text-right m-t-20" id="finalPay" style="display:none">
+                <div class="col-xs-12">
+                    <button onclick="pay()" id="confirmAmountButton" class="btn btn-primary btn-custom w-md waves-effect waves-light" type="button">Pay with default credit card (4242)
+                    </button>
+                </div>
+            </div>
+            <div class="form-group text-right m-t-20" id="transactionComplete" style="display:none">
+                <div class="col-xs-12">
+                    <center><p>Your payment successfully was processed!</p></center>
+                </div>
+            </div>
+            <div class="form-group text-right m-t-20" id="backButton">
+                <div class="col-xs-12">
+                    <center><a href="/">Go back to dashboard</a></center>
+                </div>
+            </div>
+
 
 
         </div>
@@ -100,20 +117,25 @@
             var socket = io.connect('http://localhost:5000');
 
             function connectToMerchant(){
-                socket.emit('connect-to-merchant', window.user, document.getElementById("merchantid").value);
-                console.log("HERE")
+                socket.emit('connect-to-merchant', {"user": window.user, "merchant": document.getElementById("merchantid").value } );
                 document.getElementById("merchantidDIV").style.display = "none";
                 document.getElementById("connectToMerchantButton").style.display = "none";
                 document.getElementById("loadingScreen").style.display = "";
             }
 
-            function confirmAmount(){
-                console.log("STRIPE STUFF")
+            function pay(){
+                socket.emit('pay', window.json_data );
+                document.getElementById("loadingScreen").style.display = "none";
+                document.getElementById("finalPay").style.display = "none";
+                document.getElementById("transactionComplete").style.display = "";
             }
 
-            socket.on('allow-connect-merchant', function(merchant, amount) {
-                console.log(merchant, amount);
+            socket.on('start-transaction', function(json) {
+                window.json_data = json;
+                document.getElementById("loadingScreen").style.display = "none";
+                document.getElementById("finalPay").style.display = "";
             });
+
 
         </script>
 
