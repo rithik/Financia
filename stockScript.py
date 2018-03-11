@@ -6,8 +6,11 @@ import time
 
 def foo(n):
     #tied to multiprocessing
-    getRecommendationMean()
+    x = getRecommendationMean()
     volatility()
+    y = getPrice()
+
+    return float(x) , float(y)
 
 def volatility():
     url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "?p=" + TICKER_SYMBOL
@@ -21,11 +24,12 @@ def volatility():
     fin = fin.replace("d", "")
     fin = fin.replace(">", "")
     fin = fin.replace(",", "")
-    print(fin)
+    # print(fin)
     middle = fin.find(" - ");
-    print(str(truncate(float(fin[middle+3:])- float(fin[:middle]),2)))
+    recomendation = str(truncate(float(fin[middle+3:])- float(fin[:middle]),2))
+    #print(recomendation)
     changePerc = (float(fin[middle+3:])- float(fin[:middle]))/ float(fin[:middle])
-    print("Change" + str(changePerc))
+    # print("Change" + str(changePerc))
     if changePerc > .75:
         lowRisk.append((TICKER, fin[middle+3:]))
     if changePerc < .75 and changePerc > .35:
@@ -33,12 +37,20 @@ def volatility():
     if changePerc < .35:
         highRisk.append((TICKER, fin[middle+3:]))
         
+def getPrice():
+    url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "/analysts?p=" + TICKER_SYMBOL
+    r = requests.get(url).text
+    r = requests.get(url).text
+    x = r.find("regularMarketPrice")
       
 def getRecommendationMean():
     url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "/analysts?p=" + TICKER_SYMBOL
     r = requests.get(url).text
     x = r.find("recommendationMean")
-    print(r[x+27:x+30])
+    # print(r[x+27:x+30])
+
+    return r[x+27:x+30]
+
 def truncate(f, n):
     '''Truncates/pads a float f to n decimal places without rounding'''
     s = '{}'.format(f)
@@ -52,14 +64,19 @@ highRisk = [];
 medRisk = [];
 lowRisk = [];
 TICKER_SYMBOL = "DIS"
+reccomdation = []
 TICKER = "Disney"
+sice = []
 for i in sdict:
-    print(i[0])
+    # print(i[0])
     TICKER_SYMBOL = i[1]
     TICKER = i[0]
-    foo(10);
-foo(10)
-print(highRisk)
-print(medRisk)
-print(lowRisk)
+    #num = foo(10)
+    num = foo(10)
+    recc = num[0]
+    current = num[1]
+    reccomdation.append((i[0],num,recc);
 
+sice = sorted(reccomdation, key=lambda tup: tup[1])
+
+print (sice)
