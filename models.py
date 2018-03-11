@@ -11,6 +11,21 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.TRACK_MODIFICATIONS
 
 stripe.api_key = settings.STRIPE_SECRET_KEY # Stripe's API key
 
+class MerchantUserConnection(Base):
+    __tablename__ = 'merchantuserconnections'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(String(length=50))
+    merchant_id = Column(String(length=50))
+    data = Column(String(length=1000))
+
+    def __init__(self, user_id, merchant_id, data):
+        self.user_id = user_id
+        self.merchant_id = merchant_id
+        self.data = data
+
+    def __repr__(self):
+        return '<user_id {} merchant_id {}>'.format(self.user_id, self.merchant_id)
+
 class Expense(Base):
     __tablename__ = 'expenses'
     id = Column(Integer, primary_key=True)

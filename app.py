@@ -9,7 +9,7 @@ import json
 from werkzeug.utils import secure_filename
 import stripe
 import traceback
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
 
@@ -183,26 +183,28 @@ def login():
 def merchant_login():
     return render_template("pages-login.html", merchant=True)
 
-@app.route('/cc/<id>', methods=["GET", "POST"])
-def credit_card():
-    user = User.query.filter_by(id=int(id)).first()
-    return render_template("pages-cc.html", user=user)
+@app.route('/cc/<uid>', methods=["GET", "POST"])
+def credit_card(uid):
+    user = User.query.filter_by(id=int(uid)).first()
+    return render_template("pages-cc.html", user=user.id)
 
-@app.route('/merchant/cc/<id>', methods=["GET", "POST"])
-def credit_card():
+@app.route('/merchant/cc/<uid>', methods=["GET", "POST"])
+def merchant_credit_card(uid):
+    merchant = Merchant.query.filter_by(id=int(uid)).first()
     return render_template("pages-cc-merchant.html")
 
 @socketio.on('connect-to-merchant')
-def handle_my_custom_event(user_id, merchant_id):
+def connect_to_merchant(user_id, merchant_id):
+    print("HERE", file=sys.stderr)
     namespace = "/merchant/cc/" + merchant_id
     user = User.query.filter_by(id=int(user_id)).first()
-    emit('connect-to-user', user, namespace=namespace)
+    socketio.emit('connect-to-user', user, namespace=namespace)
 
 @socketio.on('allow-connect-merchant')
-def handle_my_custom_event(user_id, merchant_id, amount):
+def allow_connect_to_merchant(user_id, merchant_id, amount):
     namespace = "/cc/" + merchant_id
     merchant = Merchant.query.filter_by(id=int(merchant_id)).first()
-    emit('allow-connect-merchant', merchant, amount, namespace=namespace)
+    socketio.emit('allow-connect-merchant', merchant, amount, namespace=namespace)
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, debug=True)
