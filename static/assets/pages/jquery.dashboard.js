@@ -50,14 +50,21 @@ $( document ).ready(function() {
                 type: 'pie',
                 width: '200',
                 height: '200',
-                sliceColors: ['#dcdcdc', '#3bafda']
+                sliceColors: ['#000000', '#3bafda']
             });
             $('#sparkline3').sparkline(pie2, {
                 type: 'pie',
                 width: '200',
                 height: '200',
-                sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d', '#ff5733', 'ffd448']
+                //sliceColors: ['#dcdcdc', '#3bafda', '#FFF7F7', '#8DFF65', '#FB77FF', '#FF777D']
             });
+
+            // $('#sparkline3').sparkline(pie2, {
+            //     type: 'pie',
+            //     width: '200',
+            //     height: '200',
+            //     sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d', '#ff5733', '#ffd448']
+            // });
 
 
         };

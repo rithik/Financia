@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from coderthemes.com/minton/dark_light/extras-team.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Mar 2018 22:37:59 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <title>Financia</title>
+
+        <link href="../static/switchery/switchery.min.css" rel="stylesheet" />
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+        <script src="assets/js/modernizr.min.js"></script>
+
+    </head>
+
+
+    <body class="fixed-left">
+
+        <div id="addCreditCard" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-success">Add Credit Card</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button> -->
+                        </div>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+
+        <div id="addIncome" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/income" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-success">Add Income</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">How much did you earn?</label>
+                                        <input type="text" class="form-control" name="amount" id="field-1" placeholder="$0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+
+        <div id="addExpense" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="/add/expense" method="POST">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title text-danger">Add Expense</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">How much did you spend?</label>
+                                        <input type="text" class="form-control" id="field-1" name="amount" placeholder="$0.00">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-2" class="control-label">Category</label>
+                                        <select class="form-control" id="category" name="category">
+                                            <option>Food</option>
+                                            <option>Clothes</option>
+                                            <option>Groceries</option>
+                                            <option>Entertainment</option>
+                                            <option>Transportation</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div><!-- /.modal -->
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <!-- LOGO -->
+                <div class="topbar-left">
+                    <div class="text-center">
+                        <a href="index.html" class="logo"><i class="mdi mdi-radar"></i> <span>Financia</span></a>
+                    </div>
+                </div>
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+                        <li class="list-inline-item notification-list hide-phone">
+                            <a class="nav-link waves-light waves-effect" href="#" id="btn-fullscreen">
+                                <i class="mdi mdi-crop-free noti-icon"></i>
+                            </a>
+                        </li>
+
+                        <a href="/cc/{{ user_id }}" class="list-inline-item hide-phone waves-light waves-effect btn-primary btn-rounded">
+                                Pay
+                        </a>
+
+                        <button class="list-inline-item hide-phone waves-light waves-effect btn-success btn-rounded" data-toggle="modal" data-target="#addIncome">
+                                Income
+                        </button>
+
+                        <button class="list-inline-item hide-phone waves-light waves-effect btn-danger btn-rounded" data-toggle="modal" data-target="#addExpense">
+                                Expense
+                        </button>
+
+                        <button class="list-inline-item hide-phone waves-light waves-effect btn-pink btn-rounded" href="/stocks">
+                                Stocks
+                        </button>
+
+
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <img src="../static/assets/images/users/generic_user.png" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="text-overflow"><small>Welcome {{ user_name }}!</small> </h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account"></i> <span>Profile</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-settings"></i> <span>Settings</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="/signout" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout"></i> <span>Logout</span>
+                                </a>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+
+                    <!-- <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+                    </ul> -->
+
+
+
+                </nav>
+
+            </div>
+            <!-- Top Bar End -->
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+                    <div class="container-fluid">
+
+                        <!-- Page-Title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Recommended Stocks</h4>
+                                    <ol class="breadcrumb float-right">
+                                        <li class="breadcrumb-item"><a href="#">Financia</a></li>
+                                        <li class="breadcrumb-item"><a href="#">Stocks</a></li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="text-center card-box">
+                                    <div class="member-card">
+
+                                        <div class="">
+                                            <h4 class="m-b-5 mt-2">@FullStockName</h4>
+                                            <p class="text-muted">@Ticker</p>
+                                        </div>
+                                        <div class="thumb-lg member-thumb m-b-10 center-page">
+                                            <img src="assets/images/users/avatar-1.jpg" class="rounded-circle img-thumbnail" alt="profile-image">
+                                        </div>
+
+                                        <div class="text-left m-t-40">
+                                            <p class="text-muted font-13"><strong>Current Price:</strong> <span class="m-l-15">@Price</span></p>
+
+                                            <p class="text-muted font-13"><strong>Volatility</strong><span class="m-l-15">@52weekrange</span></p>
+
+                                            <p class="text-muted font-13"><strong>Strength: </strong> <span class="m-l-15">@1-5scale</span></p>
+
+                                            <p class="text-muted font-13"><strong>Risk:</strong> <span class="m-l-15">@Risk</span></p>
+                                        </div>
+                                        <button type="button" class="btn btn-success btn-sm w-sm waves-effect m-t-10 waves-light">Buy Now</button>
+                                    </div>
+
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- end container -->
+                </div>
+                <!-- end content -->
+
+                <footer class="footer">
+                    2018 Financia 
+                </footer>
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Right content here -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+
+        <script>
+            var resizefunc = [];
+        </script>
+
+        <!-- Plugins  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/detect.js"></script>
+        <script src="assets/js/fastclick.js"></script>
+        <script src="assets/js/jquery.slimscroll.js"></script>
+        <script src="assets/js/jquery.blockUI.js"></script>
+        <script src="assets/js/waves.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/jquery.nicescroll.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="../plugins/switchery/switchery.min.js"></script>
+
+        <!-- Custom main Js -->
+        <script src="assets/js/jquery.core.js"></script>
+        <script src="assets/js/jquery.app.js"></script>
+
+    </body>
+
+</html>

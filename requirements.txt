@@ -58,7 +58,6 @@ protobuf==3.4.0
 psutil==5.3.1
 pyasn1==0.3.2
 pyasn1-modules==0.0.11
-PyAudio==0.2.10
 pycodestyle==2.3.1
 pydub==0.18.0
 PyExecJS==1.4.1

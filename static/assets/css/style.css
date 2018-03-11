@@ -216,7 +216,6 @@ body.fixed-left .side-menu.left {
 }
 
 .content-page {
-  margin-left: 240px;
   overflow: hidden;
 }
 
@@ -399,7 +398,7 @@ body.fixed-left .side-menu.left {
   background-color: #36404a;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.03);
   padding: 20px;
-  margin: -20px -20px 22px -20px;
+  margin: 0px 0px 22px 0px;
 }
 
 .page-title-box .breadcrumb {
@@ -472,7 +471,6 @@ body.fixed-left .side-menu.left {
 }
 
 #wrapper.enlarged .left.side-menu {
-  width: 70px;
   z-index: 5;
 }
 
@@ -522,7 +520,6 @@ body.fixed-left .side-menu.left {
 
 #wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > ul {
   display: block;
-  left: 70px;
   position: absolute;
   width: 190px;
 }
@@ -546,7 +543,6 @@ body.fixed-left .side-menu.left {
 
 #wrapper.enlarged .left.side-menu #sidebar-menu li .show-menu + ul {
   display: block;
-  left: 70px;
   position: absolute;
   width: 190px;
 }
@@ -875,10 +871,10 @@ a:hover, a:active, a:focus {
 .footer {
   background-color: #3d4853;
   bottom: 0;
-  padding: 20px 30px;
+  padding: 20px 30px 20px 30px;
   position: absolute;
-  right: 0;
-  left: 240px;
+  right: 15px;
+  left: 15px;
   text-align: center;
 }
 
