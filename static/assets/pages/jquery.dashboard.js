@@ -38,12 +38,12 @@ $( document ).ready(function() {
             barColor: '#3bafda'
         });
 
-        $('#sparkline3').sparkline([20, 40, 30, 10], {
-            type: 'pie',
-            width: '200',
-            height: '200',
-            sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d']
-        });
+        // $('#sparkline3').sparkline([20, 40, 30, 10], {
+        //     type: 'pie',
+        //     width: '200',
+        //     height: '200',
+        //     sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d']
+        // });
 
 
     };

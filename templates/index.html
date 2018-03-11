@@ -11,6 +11,7 @@
 
         <title>Financia</title>
 
+
         <link href="../static/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../static/jquery-circliful/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 
@@ -19,6 +20,7 @@
         <link href="../static/assets/css/style.css" rel="stylesheet" type="text/css">
 
         <script src="../static/assets/js/modernizr.min.js"></script>
+
 
 
     </head>
@@ -397,33 +399,33 @@
                         <div class="row">
                             <div class="col-sm-6 col-lg-3">
                                 <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="35%" data-width="5" data-fontsize="14" data-percent="35" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-success counter m-t-10">2562</h3>
-                                    <p class="text-muted text-nowrap m-b-10">Total Sales today</p>
+                                    <div class="circliful-chart" data-dimension="90" data-text="25%" data-width="5" data-fontsize="14" data-percent="25" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
+                                    <h3 class="text-success m-t-10">$ <span class="counter">26.94</span></h3>
+                                    <p class="text-muted text-nowrap m-b-10">Total Amount Left Today</p>
                                 </div>
                             </div>
 
                             <div class="col-sm-6 col-lg-3">
                                 <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#3bafda" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-primary counter m-t-10">5685</h3>
-                                    <p class="text-muted text-nowrap m-b-10">Daily visitors</p>
+                                    <div class="circliful-chart" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#D9534F" data-bgcolor="#505A66"></div>
+                                    <h3 class="text-danger m-t-10">$ <span class="counter">82.83</span></h3>
+                                    <p class="text-muted text-nowrap m-b-10">Today's Expenses</p>
                                 </div>
                             </div>
 
                             <div class="col-sm-6 col-lg-3">
                                 <div class="widget-simple-chart text-right card-box">
                                     <div class="circliful-chart" data-dimension="90" data-text="58%" data-width="5" data-fontsize="14" data-percent="58" data-fgcolor="#f76397" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-pink m-t-10">$ <span class="counter">12480</span></h3>
-                                    <p class="text-muted text-nowrap m-b-10">Total Earning</p>
+                                    <h3 class="text-pink m-t-10">$ <span class="counter">1861.80</span></h3>
+                                    <p class="text-muted text-nowrap m-b-10">Total Expenses</p>
                                 </div>
                             </div>
 
                             <div class="col-sm-6 col-lg-3">
                                 <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="49%" data-width="5" data-fontsize="14" data-percent="49" data-fgcolor="#98a6ad" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-inverse counter m-t-10">62</h3>
-                                    <p class="text-muted text-nowrap m-b-10">Pending Orders</p>
+                                    <div class="circliful-chart" data-dimension="90" data-text="49%" data-width="5" data-fontsize="14" data-percent="49" data-fgcolor="#5bc0de" data-bgcolor="#505A66"></div>
+                                    <h3 class="text-info m-t-10">$ <span class="counter">504.83</span></h3>
+                                    <p class="text-muted text-nowrap m-b-10">Money left for stocks</p>
                                 </div>
                             </div>
                         </div>
@@ -433,79 +435,53 @@
 
 
                         <div class="row">
-                            <div class="col-lg-4">
+                        
+                            <div class="col-lg-6">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Total Revenue</h4>
-
-                                    <div class="widget-chart text-center">
-                                        <div id="sparkline1"></div>
-                                        <ul class="list-inline m-t-15 mb-0">
-                                            <li>
-                                                <h5 class="text-muted m-t-20">Target</h5>
-                                                <h4 class="m-b-0">$56,214</h4>
-                                            </li>
-                                            <li>
-                                                <h5 class="text-muted m-t-20">Last week</h5>
-                                                <h4 class="m-b-0">$98,251</h4>
-                                            </li>
-                                            <li>
-                                                <h5 class="text-muted m-t-20">Last Month</h5>
-                                                <h4 class="m-b-0">$10,025</h4>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Yearly Sales Report</h4>
+                                    <h4 class="header-title m-t-0 m-b-30">Budget</h4>
 
                                     <div class="widget-chart text-center">
                                         <div id="sparkline2"></div>
                                         <ul class="list-inline m-t-15 mb-0">
                                             <li>
-                                                <h5 class="text-muted m-t-20">Target</h5>
-                                                <h4 class="m-b-0">$1000</h4>
+                                                <h5 class="text-muted m-t-20">White</h5>
+                                                <h4 id  = "value1" class="m-b-0">$4,000</h4>
                                             </li>
                                             <li>
-                                                <h5 class="text-muted m-t-20">Last week</h5>
-                                                <h4 class="m-b-0">$523</h4>
+                                                <h5 class="text-muted m-t-20"></h5>
+                                                <h4 id  = "value2" class="m-b-0">$1004.25</h4>
                                             </li>
                                             <li>
                                                 <h5 class="text-muted m-t-20">Last Month</h5>
-                                                <h4 class="m-b-0">$965</h4>
+                                                <h4 class="m-b-0">$3,769.89</h4>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0 m-b-30">Weekly Sales Report</h4>
+                                    <h4 class="header-title m-t-0 m-b-30">Expenses</h4>
 
                                     <div class="widget-chart text-center">
                                         <div id="sparkline3"></div>
                                         <ul class="list-inline m-t-15 mb-0">
                                             <li>
                                                 <h5 class="text-muted m-t-20">Target</h5>
-                                                <h4 class="m-b-0">$1,84,125</h4>
+                                                <h4 class="m-b-0">$2,000</h4>
                                             </li>
                                             <li>
                                                 <h5 class="text-muted m-t-20">Last week</h5>
-                                                <h4 class="m-b-0">$50,230</h4>
+                                                <h4 class="m-b-0">$503.85</h4>
                                             </li>
                                             <li>
                                                 <h5 class="text-muted m-t-20">Last Month</h5>
-                                                <h4 class="m-b-0">$87,451</h4>
+                                                <h4 class="m-b-0">$2,309.84</h4>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-
                             </div>
 
                         </div>
@@ -516,7 +492,7 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Latest Projects</h4>
+                                    <h4 class="header-title m-t-0">Latest Transactions</h4>
                                     <p class="text-muted m-b-25 font-13">
                                         Your awesome text goes here.
                                     </p>
@@ -525,12 +501,10 @@
                                         <table class="table mb-0">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Project Name</th>
-                                                <th>Start Date</th>
-                                                <th>Due Date</th>
-                                                <th>Status</th>
-                                                <th>Assign</th>
+                                                <th>Date of Trnsaction</th>
+                                                <th>Category</th>
+                                                <th>Transaction amount</th>
+                                                
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -538,42 +512,30 @@
                                                 <td>1</td>
                                                 <td> Admin v1</td>
                                                 <td>01/01/2017</td>
-                                                <td>26/04/2017</td>
-                                                <td><span class="badge badge-info">Released</span></td>
-                                                <td>Coderthemes</td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td> Frontend v1</td>
                                                 <td>01/01/2017</td>
-                                                <td>26/04/2017</td>
-                                                <td><span class="badge badge-success">Released</span></td>
-                                                <td> admin</td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td> Admin v1.1</td>
                                                 <td>01/05/2017</td>
-                                                <td>10/05/2017</td>
-                                                <td><span class="badge badge-pink">Pending</span></td>
-                                                <td>Coderthemes</td>
+
                                             </tr>
                                             <tr>
                                                 <td>4</td>
                                                 <td> Frontend v1.1</td>
                                                 <td>01/01/2017</td>
-                                                <td>31/05/2017</td>
-                                                <td><span class="badge badge-purple">Work in Progress</span>
-                                                </td>
-                                                <td> admin</td>
+
                                             </tr>
                                             <tr>
                                                 <td>5</td>
                                                 <td> Admin v1.3</td>
                                                 <td>01/01/2017</td>
-                                                <td>31/05/2017</td>
-                                                <td><span class="badge badge-warning">Coming soon</span></td>
-                                                <td>Coderthemes</td>
                                             </tr>
 
                                             </tbody>
@@ -600,122 +562,6 @@
             <!-- ============================================================== -->
             <!-- End Right content here -->
             <!-- ============================================================== -->
-
-
-            <!-- Right Sidebar -->
-            <div class="side-bar right-bar">
-                <div class="">
-                    <ul class="nav nav-tabs tabs-bordered nav-justified">
-                        <li class="nav-item">
-                            <a href="#home-2" class="nav-link active" data-toggle="tab" aria-expanded="false">
-                                Activity
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#messages-2" class="nav-link" data-toggle="tab" aria-expanded="true">
-                                Settings
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="home-2">
-                            <div class="timeline-2">
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">5 minutes ago</small>
-                                        <p><strong><a href="#" class="text-info">John Doe</a></strong> Uploaded a photo <strong>"DSC000586.jpg"</strong></p>
-                                    </div>
-                                </div>
-
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">30 minutes ago</small>
-                                        <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                                    </div>
-                                </div>
-
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">59 minutes ago</small>
-                                        <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                                    </div>
-                                </div>
-
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">1 hour ago</small>
-                                        <p><strong><a href="#" class="text-info">John Doe</a></strong>Uploaded 2 new photos</p>
-                                    </div>
-                                </div>
-
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">3 hours ago</small>
-                                        <p><a href="#" class="text-info">Lorem</a> commented your post.</p>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                                    </div>
-                                </div>
-
-                                <div class="time-item">
-                                    <div class="item-info">
-                                        <small class="text-muted">5 hours ago</small>
-                                        <p><a href="#" class="text-info">Jessi</a> attended a meeting with<a href="#" class="text-success">John Doe</a>.</p>
-                                        <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet tellus ut tincidunt euismod. "</em></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="tab-pane" id="messages-2">
-
-                            <div class="row m-t-20">
-                                <div class="col-8">
-                                    <h5 class="m-0 font-15">Notifications</h5>
-                                    <p class="text-muted m-b-0"><small>Do you need them?</small></p>
-                                </div>
-                                <div class="col-4 text-right">
-                                    <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                                </div>
-                            </div>
-
-                            <div class="row m-t-20">
-                                <div class="col-8">
-                                    <h5 class="m-0 font-15">API Access</h5>
-                                    <p class="m-b-0 text-muted"><small>Enable/Disable access</small></p>
-                                </div>
-                                <div class="col-4 text-right">
-                                    <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                                </div>
-                            </div>
-
-                            <div class="row m-t-20">
-                                <div class="col-8">
-                                    <h5 class="m-0 font-15">Auto Updates</h5>
-                                    <p class="m-b-0 text-muted"><small>Keep up to date</small></p>
-                                </div>
-                                <div class="col-4 text-right">
-                                    <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                                </div>
-                            </div>
-
-                            <div class="row m-t-20">
-                                <div class="col-8">
-                                    <h5 class="m-0 font-15">Online Status</h5>
-                                    <p class="m-b-0 text-muted"><small>Show your status to all</small></p>
-                                </div>
-                                <div class="col-4 text-right">
-                                    <input type="checkbox" checked data-plugin="switchery" data-color="#3bafda" data-size="small"/>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Right-bar -->
 
         </div>
         <!-- END wrapper -->
@@ -750,6 +596,16 @@
 
         <!-- skycons -->
         <script src="../static/skyicons/skycons.min.js" type="text/javascript"></script>
+        <script src="assets/pages/jquery.dashboard.js"></script><!----> 
+        <script src="../static/flot-chart/jquery.flot.js"></script>
+        <script src="../static/flot-chart/jquery.flot.time.js"></script>
+        <script src="../static/flot-chart/jquery.flot.tooltip.min.js"></script>
+        <script src="../static/flot-chart/jquery.flot.resize.js"></script>
+        <script src="../static/flot-chart/jquery.flot.pie.js"></script>
+        <script src="../static/flot-chart/jquery.flot.selection.js"></script>
+        <script src="../static/flot-chart/jquery.flot.stack.js"></script>
+        <script src="../static/flot-chart/jquery.flot.crosshair.js"></script>
+        <!--<script src="assets/pages/jquery.flot.init.js"></script>-->
 
         <!-- Page js  -->
         <script src="../static/assets/pages/jquery.dashboard.js"></script>
@@ -759,6 +615,7 @@
         <script src="../static/assets/js/jquery.app.js"></script>
 
 
+
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $('.counter').counterUp({
@@ -766,7 +623,56 @@
                     time: 1200
                 });
                 $('.circliful-chart').circliful();
+            }); 
+            var incomes = '{{ income_statements }}';
+            var expenses = '{{ expense_statements }}';
+            var totalincomes = 0;
+            incomes.forEach(function(x) {
+                totalincomes=x.amount + incomes;
             });
+            
+            
+            var food = 0;
+            var clothes = 0;
+            var transportation = 0;
+            var groceries = 0;
+            var entertainment = 0;
+            var other = 0;
+            
+            expenses.forEach(function(x) {
+              if(x.description == 'Food'){
+                  food = x.amount + food;
+              }
+              else if(x.description == 'Clothes'){
+                  clothes = x.amount + clothes;
+              }
+              else if(x.description == 'Transportation'){
+                  transportation = x.amount + transportation;
+              }
+              else if(x.description == 'Groceries'){
+                  groceries = x.amount + groceries;
+              }
+              else if(x.description == 'Entertainment'){
+                  entertainment = x.amount + entertainment;
+              }
+              else if(x.description == 'Other'){
+                  other = x.amount + other;
+              }
+            });
+            var totalcosts = food+clothes+transportation+groceries+entertainment+other;
+            
+            var budgetdata = [totalcosts, totalincomes-totalcosts];
+            var expenseData = [food,clothes,transportation,groceries,entertainment,other]; 
+            // DrawPie(expenseData, budgetdata);
+            DrawSparkline();
+            var resizeChart;
+        
+            // $(window).resize(function(e) {
+            //     clearTimeout(resizeChart);
+            //     resizeChart = setTimeout(function() {
+            //         DrawSparkline();
+            //     }, 300);
+            // });
 
         </script>
 

@@ -30,12 +30,11 @@ $( document ).ready(function() {
             highlightSpotColor: 'rgba(0,0,0,.2)'
         });
 
-        $('#sparkline2').sparkline([3, 6, 7, 8, 6, 4, 7, 10, 12, 7, 4, 9, 12, 13, 11, 12], {
-            type: 'bar',
+        $('#sparkline2').sparkline([20, 40, 30, 10], {
+            type: 'pie',
+            width: '200',
             height: '200',
-            barWidth: '10',
-            barSpacing: '5',
-            barColor: '#3bafda'
+            sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d']
         });
 
         $('#sparkline3').sparkline([20, 40, 30, 10], {
@@ -47,8 +46,22 @@ $( document ).ready(function() {
 
 
     };
+    // var DrawPie = function(pie2, pie1) {
+    //      $('#sparkline2').sparkline(pie1, {
+    //         type: 'pie',
+    //         width: '200',
+    //         height: '200',
+    //         sliceColors: ['#dcdcdc', '#3bafda']
+    //     });
+    //     $('#sparkline3').sparkline(pie2, {
+    //         type: 'pie',
+    //         width: '200',
+    //         height: '200',
+    //         sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d', '#ff5733', 'ffd448']
+    //     });
 
 
+    // };
     DrawSparkline();
 
     var resizeChart;

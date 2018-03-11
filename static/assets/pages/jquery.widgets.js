@@ -1,4 +1,3 @@
-
 /**
  * Theme: Minton Admin Template
  * Author: Coderthemes
