@@ -98,10 +98,21 @@ def home_page():
             print(user, file=sys.stderr)
             income_statements = Income.query.filter_by(user_id=user.id).all()
             print(income_statements, file=sys.stderr)
+            new_income_statements = []
+            income_total = 0
+            for k in income_statements:
+                new_income_statements.append({"amount": k.amount})
+                income_total += k.amount
             expense_statements = Expense.query.filter_by(user_id=user.id).all()
+            new_expense_statements = []
+            expense_total = 0
+            for k in expense_statements:
+                new_expense_statements.append({"amount": k.amount, "description": k.description, "time": k.time.strftime("%Y-%m-%d %H:%M:%S")})
+                expense_total += k.amount
             print(expense_statements, file=sys.stderr)
+            expense_rate = int((expense_total/income_total)* 100)
             return render_template("index.html", user_id=user.id, user_name=user.name,
-                                    income=income_statements, expense=expense_statements)
+                                    income=new_income_statements, expense=new_expense_statements, expense_rate=expense_rate)
     except:
         print("ERROR OCCURED", file=sys.stderr)
         session.pop('csrf', None)

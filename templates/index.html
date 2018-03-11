@@ -426,42 +426,23 @@
 
 
                         <div class="row">
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="25%" data-width="5" data-fontsize="14" data-percent="25" data-fgcolor="#5fbeaa" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-success m-t-10">$ <span class="counter">26.94</span></h3>
-                                    <p class="text-muted text-nowrap m-b-10">Total Amount Left Today</p>
+                                    <div class="circliful-chart" data-dimension="90" data-text="100%" data-width="5" data-fontsize="14" data-percent="100" data-fgcolor="#009886" data-bgcolor="#505A66"></div>
+                                    <h3 class="text-success m-t-10">$ <span id="totalincome" class="counter"></span></h3>
+                                    <p class="text-muted text-nowrap m-b-10">Total Income</p>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-lg-6">
                                 <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="75%" data-width="5" data-fontsize="14" data-percent="75" data-fgcolor="#D9534F" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-danger m-t-10">$ <span class="counter">82.83</span></h3>
-                                    <p class="text-muted text-nowrap m-b-10">Today's Expenses</p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="58%" data-width="5" data-fontsize="14" data-percent="58" data-fgcolor="#f76397" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-pink m-t-10">$ <span class="counter">1861.80</span></h3>
+                                    <div class="circliful-chart" data-dimension="90" data-text="{{ expense_rate }}%" data-width="5" data-fontsize="14" data-percent="{{ expense_rate }}" data-fgcolor="#D9534F" data-bgcolor="#505A66"></div>
+                                    <h3 class="text-danger m-t-10">$ <span id="totalexpense" class="counter"></span></h3>
                                     <p class="text-muted text-nowrap m-b-10">Total Expenses</p>
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="widget-simple-chart text-right card-box">
-                                    <div class="circliful-chart" data-dimension="90" data-text="49%" data-width="5" data-fontsize="14" data-percent="49" data-fgcolor="#5bc0de" data-bgcolor="#505A66"></div>
-                                    <h3 class="text-info m-t-10">$ <span class="counter">504.83</span></h3>
-                                    <p class="text-muted text-nowrap m-b-10">Money left for stocks</p>
-                                </div>
-                            </div>
                         </div>
-                        <!-- end row -->
-
-
-
 
                         <div class="row">
 
@@ -474,15 +455,12 @@
                                         <ul class="list-inline m-t-15 mb-0">
                                             <li>
                                                 <h5 class="text-muted m-t-20">White</h5>
-                                                <h4 id  = "value1" class="m-b-0">$4,000</h4>
+                                                <h4 id ="value1" class="m-b-0">Expenses</h4>
                                             </li>
+
                                             <li>
-                                                <h5 class="text-muted m-t-20"></h5>
-                                                <h4 id  = "value2" class="m-b-0">$1004.25</h4>
-                                            </li>
-                                            <li>
-                                                <h5 class="text-muted m-t-20">Last Month</h5>
-                                                <h4 class="m-b-0">$3,769.89</h4>
+                                                <h5 class="text-muted m-t-20">Blue</h5>
+                                                <h4 class="m-b-0">Net Income</h4>
                                             </li>
                                         </ul>
                                     </div>
@@ -521,51 +499,30 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Latest Transactions</h4>
+                                    <h4 class="header-title m-t-0">Latest Expenses</h4>
                                     <p class="text-muted m-b-25 font-13">
-                                        Your awesome text goes here.
+
                                     </p>
 
                                     <div class="table-responsive">
                                         <table class="table mb-0">
                                             <thead>
                                             <tr>
-                                                <th>Date of Trnsaction</th>
+                                                <th>Date of Transaction</th>
                                                 <th>Category</th>
                                                 <th>Transaction amount</th>
 
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td> Admin v1</td>
-                                                <td>01/01/2017</td>
+                                                {% for k in expense|reverse %}
+                                                    <tr>
+                                                        <td>{{ k.time }}</td>
+                                                        <td>{{ k.description }}</td>
+                                                        <td>${{ k.amount }}</td>
 
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td> Frontend v1</td>
-                                                <td>01/01/2017</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td> Admin v1.1</td>
-                                                <td>01/05/2017</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td> Frontend v1.1</td>
-                                                <td>01/01/2017</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td> Admin v1.3</td>
-                                                <td>01/01/2017</td>
-                                            </tr>
+                                                    </tr>
+                                                {% endfor %}
 
                                             </tbody>
                                         </table>
@@ -647,6 +604,23 @@
 
 
         <script type="text/javascript">
+            var DrawPie = function(pie2, pie1) {
+             $('#sparkline2').sparkline(pie1, {
+                type: 'pie',
+                width: '200',
+                height: '200',
+                sliceColors: ['#dcdcdc', '#3bafda']
+            });
+            $('#sparkline3').sparkline(pie2, {
+                type: 'pie',
+                width: '200',
+                height: '200',
+                sliceColors: ['#dcdcdc', '#3bafda', '#333333', '#00b19d', '#ff5733', 'ffd448']
+            });
+
+
+        };
+
             jQuery(document).ready(function($) {
                 $('.counter').counterUp({
                     delay: 100,
@@ -654,13 +628,13 @@
                 });
                 $('.circliful-chart').circliful();
             });
-            var incomes = '{{ income_statements }}';
-            var expenses = '{{ expense_statements }}';
-            var totalincomes = 0;
+            window.incomes = JSON.parse('{{ income|tojson }}');
+            window.expenses = JSON.parse('{{ expense|tojson }}');
+            window.totalincomes = 0;
             incomes.forEach(function(x) {
-                totalincomes=x.amount + incomes;
+                totalincomes+=parseInt(x.amount);
             });
-
+            document.getElementById("totalincome").innerHTML = totalincomes;
 
             var food = 0;
             var clothes = 0;
@@ -690,19 +664,14 @@
               }
             });
             var totalcosts = food+clothes+transportation+groceries+entertainment+other;
-
+            document.getElementById("totalexpense").innerHTML = totalcosts;
             var budgetdata = [totalcosts, totalincomes-totalcosts];
             var expenseData = [food,clothes,transportation,groceries,entertainment,other];
-            // DrawPie(expenseData, budgetdata);
-            DrawSparkline();
+            DrawPie(expenseData, budgetdata);
+            //DrawSparkline();
             var resizeChart;
 
-            // $(window).resize(function(e) {
-            //     clearTimeout(resizeChart);
-            //     resizeChart = setTimeout(function() {
-            //         DrawSparkline();
-            //     }, 300);
-            // });
+
 
         </script>
 
