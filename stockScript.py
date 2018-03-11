@@ -42,6 +42,8 @@ def getPrice():
     r = requests.get(url).text
     r = requests.get(url).text
     x = r.find("regularMarketPrice")
+
+    return x
       
 def getRecommendationMean():
     url = "https://finance.yahoo.com/quote/" + TICKER_SYMBOL + "/analysts?p=" + TICKER_SYMBOL
@@ -71,11 +73,10 @@ for i in sdict:
     # print(i[0])
     TICKER_SYMBOL = i[1]
     TICKER = i[0]
-    #num = foo(10)
     num = foo(10)
-    recc = num[0]
+    recc = num[0]
     current = num[1]
-    reccomdation.append((i[0],num,recc);
+    reccomdation.append((i[0],num,recc));
 
 sice = sorted(reccomdation, key=lambda tup: tup[1])
 
